@@ -1,30 +1,21 @@
 
-        </div><!-- /.main-content -->
-        {if !$inShoppingCart && $secondarySidebar->hasChildren()}
-            <div class="col-md-3 pull-md-left sidebar">
-                {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
-            </div>
-        {/if}
+                </div><!-- /.main-content -->
+                {if !$inShoppingCart && $secondarySidebar->hasChildren()}
+                    <div class="col-md-3 pull-md-left sidebar sidebar-secondary">
+                        {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
+                    </div>
+                {/if}
+            <div class="clearfix"></div>
+        </div>
     </div>
-    <div class="clearfix"></div>
 </section>
 
 <section id="footer">
-
-    <p>Copyright &copy; {$date_year} {$companyname}. All Rights Reserved.</p>
-
+    <div class="container">
+        <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+        <p>Copyright &copy; {$date_year} {$companyname}. All Rights Reserved.</p>
+    </div>
 </section>
-
-<script src="{$BASE_PATH_JS}/bootstrap.min.js"></script>
-<script type="text/javascript">
-    var csrfToken = '{$token}',
-        markdownGuide = '{lang key="markdown.title"}',
-        locale = '{if !empty($mdeLocale)}{lang key="locale"}{else}en_GB{/if}',
-        saved = '{lang key="markdown.saved"}',
-        saving = '{lang key="markdown.saving"}';
-</script>
-<script src="{$WEB_ROOT}/templates/{$template}/js/whmcs.js"></script>
-<script src="{$BASE_PATH_JS}/AjaxModal.js"></script>
 
 <div class="modal system-modal fade" id="modalAjax" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -41,7 +32,7 @@
             </div>
             <div class="modal-footer panel-footer">
                 <div class="pull-left loader">
-                    <i class="fa fa-circle-o-notch fa-spin"></i> Loading...
+                    <i class="fas fa-circle-notch fa-spin"></i> Loading...
                 </div>
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                     Close
